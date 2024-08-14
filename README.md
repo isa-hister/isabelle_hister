@@ -41,9 +41,66 @@ Nome da clínica veterinária: MiAu.
 ---
 # 2. Diagrama do banco de dados
 
-Colocar aqui o diagrama de banco...
+```mermaid
+erDiagram
+    CLIENTE {
+        int id
+        string nome
+        string telefone
+        string endereco
+    }
 
-![]()
+    ANIMAL {
+        int id
+        string nome
+        string especie
+        string raca
+        string idade
+        string condicao
+        string tipo_racao
+        string habitos
+    }
+
+    VETERINARIO {
+        int id
+        string nome
+        string especialidade
+    }
+
+    ATENDENTE {
+        int id
+        string nome
+    }
+
+    AGENDA {
+        int id
+        datetime data_hora
+        int cliente_id
+        int animal_id
+        int veterinario_id
+        string status
+    }
+
+    FICHA {
+        int id
+        int animal_id
+        string observacoes
+    }
+
+    RECEITA {
+        int id
+        int ficha_id
+        string descricao
+    }
+
+    CLIENTE ||--o{ ANIMAL : possui
+    ANIMAL ||--o{ FICHA : possui
+    FICHA ||--o{ RECEITA : gera
+    ANIMAL ||--o{ AGENDA : tem
+    CLIENTE ||--o{ AGENDA : agenda
+    VETERINARIO ||--o{ AGENDA : atende
+    ATENDENTE ||--o{ AGENDA : organiza
+```
 
 ---
 # 3. Diagrama de casos de uso
