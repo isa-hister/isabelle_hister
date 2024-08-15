@@ -105,9 +105,7 @@ erDiagram
 ---
 # 3. Diagrama de casos de uso
 
-Colocar aqui o diagrama de casos de uso...
-
-![]()
+![https://github.com/isa-hister/isabelle_hister/blob/main/Diagrama%20sem%20nome.drawio.png](https://github.com/isa-hister/isabelle_hister/blob/main/Diagrama%20sem%20nome.drawio.png)
 
 ---
 # 4. Principais telas do sistema
