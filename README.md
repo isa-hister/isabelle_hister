@@ -112,8 +112,6 @@ erDiagram
 ---
 # 4. Principais telas do sistema
 
-Principais telas do sistema:
-
 ![https://github.com/isa-hister/isabelle_hister/blob/main/Imagem_banco.png](https://github.com/isa-hister/isabelle_hister/blob/main/Imagem_banco.png) ![https://github.com/isa-hister/isabelle_hister/blob/main/Imagem_script.png](https://github.com/isa-hister/isabelle_hister/blob/main/Imagem_script.png)
 ![https://github.com/isa-hister/isabelle_hister/blob/main/imagem_inicio.png](https://github.com/isa-hister/isabelle_hister/blob/main/imagem_inicio.png) ![https://github.com/isa-hister/isabelle_hister/blob/main/imagem_login.png](https://github.com/isa-hister/isabelle_hister/blob/main/imagem_login.png)
 ![https://github.com/isa-hister/isabelle_hister/blob/main/imagem_zip.png](https://github.com/isa-hister/isabelle_hister/blob/main/imagem_zip.png) ![https://github.com/isa-hister/isabelle_hister/blob/main/imagem_grafico.png](https://github.com/isa-hister/isabelle_hister/blob/main/imagem_grafico.png)
