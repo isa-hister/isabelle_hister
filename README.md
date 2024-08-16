@@ -10,6 +10,8 @@ Autora: Isabelle Hister dos Santos.
 
 Nome da clínica veterinária: MiAu.
 
+![https://github.com/isa-hister/isabelle_hister/blob/main/Shares%20are.png](https://github.com/isa-hister/isabelle_hister/blob/main/Shares%20are.png)
+
 1. Uma clínica veterinária atende apenas os animais: gatos e cachorros. 
 2. Os clientes devem fazer um cadastro de si e dos animais. 
 3. Os clientes devem informar as condições nas quais os animais chegam. 
@@ -112,11 +114,99 @@ erDiagram
 
 Colocar aqui a figura das telas do sistema...
 
+![]() ![]()
+![]() ![]()
 ![]()
 
 ---
 # 5. Arquitetura do sistema
 
-Incluir um diagrama do sistema...
+```mermaid
+graph TD;
+    subgraph Clínica Veterinária
+        direction TB
 
-![]()
+        Cliente -->|Cadastra-se| SistemaDeCadastro
+        Cliente -->|Marca consulta| SistemaDeAgenda
+        Cliente -->|Realiza pagamento| SistemaDePagamento
+
+        Atendente -->|Verifica agenda| SistemaDeAgenda
+        Atendente -->|Registra chegada| SistemaDeFilaDeEspera
+        Atendente -->|Leva cliente e animal ao veterinário| SalaDeConsulta
+
+        Veterinario -->|Realiza entrevista| SalaDeConsulta
+        Veterinario -->|Examinar animal| SalaDeExame
+        Veterinario -->|Preenche prontuário| SistemaDeProntuario
+        Veterinario -->|Gera receita| SistemaDeReceita
+
+        Petshop -->|Venda de produtos| SistemaDeVenda
+        Petshop -->|Venda de vacinas| SistemaDeVacinas
+        Petshop -->|Realiza vacinação| SalaDeVacina
+
+        SistemaDeCadastro
+        SistemaDeAgenda
+        SistemaDePagamento
+        SistemaDeFilaDeEspera
+        SalaDeConsulta
+        SalaDeExame
+        SistemaDeProntuario
+        SistemaDeReceita
+        SistemaDeVenda
+        SistemaDeVacinas
+        SalaDeVacina
+
+    end
+
+    subgraph Sistemas Externos
+        direction TB
+        SistemaBancario
+        PlanoDeSaudePet
+    end
+
+    SistemaDePagamento -->|Pix, Cartão de Débito, Dinheiro| SistemaBancario
+    SistemaDeVenda -->|Ração, Roupas, Camas, Brinquedos| Cliente
+    SistemaDeVacinas -->|Venda e vacinação| Cliente
+    SistemaDePagamento -->|Planos de Saúde| PlanoDeSaudePet
+
+    style SistemaBancario fill:#f9f,stroke:#333,stroke-width:2px;
+    style PlanoDeSaudePet fill:#f9f,stroke:#333,stroke-width:2px;
+
+    subgraph Infraestrutura da Clínica
+        ServidorCadastro[(Servidor Cadastro)]
+        ServidorAgenda[(Servidor Agenda)]
+        ServidorPagamento[(Servidor Pagamento)]
+        ServidorFilaDeEspera[(Servidor Fila de Espera)]
+        ServidorProntuario[(Servidor Prontuário)]
+        ServidorReceita[(Servidor Receita)]
+        ServidorVenda[(Servidor Venda)]
+        ServidorVacinas[(Servidor Vacinas)]
+
+        SistemaDeCadastro --> ServidorCadastro
+        SistemaDeAgenda --> ServidorAgenda
+        SistemaDePagamento --> ServidorPagamento
+        SistemaDeFilaDeEspera --> ServidorFilaDeEspera
+        SistemaDeProntuario --> ServidorProntuario
+        SistemaDeReceita --> ServidorReceita
+        SistemaDeVenda --> ServidorVenda
+        SistemaDeVacinas --> ServidorVacinas
+
+    end
+```
+```mermaid
+graph TD;
+    ClientWeb -->|HTTP Request| ServidorWeb
+    ServidorWeb -->|Executa| AplicacaoPHP
+    AplicacaoPHP -->|Consulta/Atualiza| ServidorBD
+    ServidorBD -->|Resposta de Dados| AplicacaoPHP
+    AplicacaoPHP -->|HTTP Response| ServidorWeb
+    ServidorWeb -->|HTTP Response| ClientWeb
+
+    ClientWeb(Client Web)
+    ServidorWeb[Servidor Web]
+    AplicacaoPHP[Aplicação PHP]
+    ServidorBD[(Servidor de Banco de Dados)]
+    
+    style ServidorWeb fill:#f9f,stroke:#333,stroke-width:2px;
+    style AplicacaoPHP fill:#bbf,stroke:#333,stroke-width:2px;
+    style ServidorBD fill:#bff,stroke:#333,stroke-width:2px;
+```
