@@ -112,14 +112,16 @@ erDiagram
 ---
 # 4. Principais telas do sistema
 
-Colocar aqui a figura das telas do sistema...
+Principais telas do sistema:
 
-![]() ![]()
-![]() ![]()
-![]()
+![https://github.com/isa-hister/isabelle_hister/blob/main/Imagem_banco.png](https://github.com/isa-hister/isabelle_hister/blob/main/Imagem_banco.png) ![https://github.com/isa-hister/isabelle_hister/blob/main/Imagem_script.png](https://github.com/isa-hister/isabelle_hister/blob/main/Imagem_script.png)
+![https://github.com/isa-hister/isabelle_hister/blob/main/imagem_inicio.png](https://github.com/isa-hister/isabelle_hister/blob/main/imagem_inicio.png) ![https://github.com/isa-hister/isabelle_hister/blob/main/imagem_login.png](https://github.com/isa-hister/isabelle_hister/blob/main/imagem_login.png)
+![https://github.com/isa-hister/isabelle_hister/blob/main/imagem_zip.png](https://github.com/isa-hister/isabelle_hister/blob/main/imagem_zip.png) ![https://github.com/isa-hister/isabelle_hister/blob/main/imagem_grafico.png](https://github.com/isa-hister/isabelle_hister/blob/main/imagem_grafico.png)
+![https://github.com/isa-hister/isabelle_hister/blob/main/imagem_ficha.png](https://github.com/isa-hister/isabelle_hister/blob/main/imagem_ficha.png) ![https://github.com/isa-hister/isabelle_hister/blob/main/imagem_atendentes.png](https://github.com/isa-hister/isabelle_hister/blob/main/imagem_atendentes.png)
 
 ---
 # 5. Arquitetura do sistema
+
 
 ```mermaid
 graph TD;
@@ -191,7 +193,9 @@ graph TD;
         SistemaDeVacinas --> ServidorVacinas
 
     end
+
 ```
+
 ```mermaid
 graph TD;
     ClientWeb -->|HTTP Request| ServidorWeb
@@ -209,4 +213,5 @@ graph TD;
     style ServidorWeb fill:#f9f,stroke:#333,stroke-width:2px;
     style AplicacaoPHP fill:#bbf,stroke:#333,stroke-width:2px;
     style ServidorBD fill:#bff,stroke:#333,stroke-width:2px;
+
 ```
